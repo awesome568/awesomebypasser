@@ -71,7 +71,6 @@
       textArea.select();
       document.execCommand("copy");
       document.body.removeChild(textArea);
-      alert("Copied to clipboard!");
     }
   </script>
 </head>
@@ -80,11 +79,11 @@
   <textarea id="inputText" rows="4" cols="50"></textarea>
   <br>
   <label>
-    <input type="checkbox" id="addZwsp"> Add a layer of bypass (makes it better)
+    <input type="checkbox" id="addZwsp"> Add ZWSP (makes it better)
   </label>
   <br>
   <label>
-    <input type="checkbox" id="replaceSpaces"> Add another layer of bypass (makes it even better)
+    <input type="checkbox" id="replaceSpaces"> Add fake spaces (makes it better)
   </label>
   <br>
   <button onclick="replaceText()">Bypass!</button>
