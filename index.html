@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Text Bypasser</title>
+  <title>Unicode Spoofer</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -30,35 +30,43 @@
       var inputText = document.getElementById("inputText").value;
       var addZwsp = document.getElementById("addZwsp").checked;
       var replaceSpaces = document.getElementById("replaceSpaces").checked;
+      var useCyrillic = document.getElementById("useCyrillic").checked;
 
-      var outputText = inputText
-        .replace(/a/g, "\u0430" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/c/g, "\u0441" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/e/g, "\u0435" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/i/g, "\u0456" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/j/g, "\u0458" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/o/g, "\u043E" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/p/g, "\u0440" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/s/g, "\u0455" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/x/g, "\u0445" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/y/g, "\u0443" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/A/g, "\u0410" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/B/g, "\u0412" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/C/g, "\u0421" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/E/g, "\u0415" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/H/g, "\u041D" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/I/g, "\u0406" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/K/g, "\u039A" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/M/g, "\u041C" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/N/g, "\u039D" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/O/g, "\u041E" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/P/g, "\u0420" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/S/g, "\u0405" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/T/g, "\u0422" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/X/g, "\u0425" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/Z/g, "\u0396" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/Y/g, "\u03A5" + (addZwsp ? "\uFEFF\u200B" : ""))
-        .replace(/ /g, "\u2005" + (replaceSpaces ? "\uFEFF\u200B" : ""));
+      var outputText = inputText;
+
+      if (useCyrillic) {
+        outputText = outputText
+          .replace(/a/g, "\u0430" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/c/g, "\u0441" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/e/g, "\u0435" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/i/g, "\u0456" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/j/g, "\u0458" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/o/g, "\u043E" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/p/g, "\u0440" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/s/g, "\u0455" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/x/g, "\u0445" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/y/g, "\u0443" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/A/g, "\u0410" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/B/g, "\u0412" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/C/g, "\u0421" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/E/g, "\u0415" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/H/g, "\u041D" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/I/g, "\u0406" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/K/g, "\u039A" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/M/g, "\u041C" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/N/g, "\u039D" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/O/g, "\u041E" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/P/g, "\u0420" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/S/g, "\u0405" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/T/g, "\u0422" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/X/g, "\u0425" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/Z/g, "\u0396" + (addZwsp ? "\uFEFF\u200B" : ""))
+          .replace(/Y/g, "\u03A5" + (addZwsp ? "\uFEFF\u200B" : ""));
+      }
+
+      if (replaceSpaces) {
+        outputText = outputText.replace(/ /g, "\u2005" + (replaceSpaces ? "\uFEFF\u200B" : ""));
+      }
 
       document.getElementById("outputText").textContent = outputText;
     }
@@ -71,6 +79,7 @@
       textArea.select();
       document.execCommand("copy");
       document.body.removeChild(textArea);
+      alert("Copied to clipboard!");
     }
   </script>
 </head>
@@ -79,14 +88,18 @@
   <textarea id="inputText" rows="4" cols="50"></textarea>
   <br>
   <label>
-    <input type="checkbox" id="addZwsp"> Add ZWSP (makes it better)
+    <input type="checkbox" id="addZwsp"> Add ZWSP
   </label>
   <br>
   <label>
-    <input type="checkbox" id="replaceSpaces"> Add fake spaces (makes it better)
+    <input type="checkbox" id="replaceSpaces"> Spoof spaces
   </label>
   <br>
-  <button onclick="replaceText()">Bypass!</button>
+  <label>
+    <input type="checkbox" id="useCyrillic"> Spoof characters
+  </label>
+  <br>
+  <button onclick="replaceText()">Spoof!</button>
   <button onclick="copyToClipboard()">Copy to Clipboard</button>
   <br>
   <label for="outputText">Output Text:</label>
