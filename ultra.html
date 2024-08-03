@@ -4,7 +4,96 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>awesome bypasser</title>
+  <style><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicode Spoofer</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    textarea, button, label, div {
+      margin: 10px;
+    }
+    button {
+      padding: 8px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script>
+    function replaceText() {
+      var inputText = document.getElementById("inputText").value;
+
+      var outputText = inputText
+        .replace(/a/g, "\u0430\uFEFF\u200B\u206F\u180E")
+        .replace(/c/g, "\u0441\uFEFF\u200B\u206F\u180E")
+        .replace(/e/g, "\u0435\uFEFF\u200B\u206F\u180E")
+        .replace(/i/g, "\u0456\uFEFF\u200B\u206F\u180E")
+        .replace(/j/g, "\u0458\uFEFF\u200B\u206F\u180E")
+        .replace(/o/g, "\u043E\uFEFF\u200B\u206F\u180E")
+        .replace(/p/g, "\u0440\uFEFF\u200B\u206F\u180E")
+        .replace(/s/g, "\u0455\uFEFF\u200B\u206F\u180E")
+        .replace(/x/g, "\u0445\uFEFF\u200B\u206F\u180E")
+        .replace(/y/g, "\u0443\uFEFF\u200B\u206F\u180E")
+        .replace(/A/g, "\u0410\uFEFF\u200B\u206F\u180E")
+        .replace(/B/g, "\u0412\uFEFF\u200B\u206F\u180E")
+        .replace(/C/g, "\u0421\uFEFF\u200B\u206F\u180E")
+        .replace(/E/g, "\u0415\uFEFF\u200B\u206F\u180E")
+        .replace(/H/g, "\u041D\uFEFF\u200B\u206F\u180E")
+        .replace(/I/g, "\u0406\uFEFF\u200B\u206F\u180E")
+        .replace(/K/g, "\u039A\uFEFF\u200B\u206F\u180E")
+        .replace(/M/g, "\u041C\uFEFF\u200B\u206F\u180E")
+        .replace(/N/g, "\u039D\uFEFF\u200B\u206F\u180E")
+        .replace(/O/g, "\u041E\uFEFF\u200B\u206F\u180E")
+        .replace(/P/g, "\u0420\uFEFF\u200B\u206F\u180E")
+        .replace(/S/g, "\u0405\uFEFF\u200B\u206F\u180E")
+        .replace(/T/g, "\u0422\uFEFF\u200B\u206F\u180E")
+        .replace(/X/g, "\u0425\uFEFF\u200B\u206F\u180E")
+        .replace(/Z/g, "\u0396\uFEFF\u200B\u206F\u180E")
+        .replace(/Y/g, "\u03A5\uFEFF\u200B\u206F\u180E")
+        .replace(/ /g, "\u2005\uFEFF\u200B");
+
+      document.getElementById("outputText").textContent = outputText;
+    }
+
+    function copyToClipboard() {
+      var outputText = document.getElementById("outputText");
+      var textArea = document.createElement("textarea");
+      textArea.value = outputText.textContent;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      alert("Copied to clipboard!");
+    }
+  </script>
+</head>
+<body>
+  <label for="inputText">Enter Text:</label>
+  <textarea id="inputText" rows="4" cols="50"></textarea>
+  <br>
+  <button onclick="replaceText()">Spoof!</button>
+  <button onclick="copyToClipboard()">Copy to Clipboard</button>
+  <br>
+  <label for="outputText">Output Text:</label>
+  <div id="outputText"></div>
+  <br>
+  <br>
+  <p>This will add more stuff in between each character to make it harder to detect! (doesnt work for roblox)</p>
+</body>
+</html>
+
     body {
       font-family: Arial, sans-serif;
       text-align: center;
